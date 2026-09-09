@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta
+    name="description"
+    content="Prodigy Institute Empire — Empowering students with knowledge, skills and excellence for a successful future."
+  />
+
+  <title>Prodigy Institute Empire | Excellence in Education</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --navy: #071a35;
+      --navy-light: #0c2850;
+      --gold: #d4a64a;
+      --gold-light: #f0c96d;
+      --white: #ffffff;
+      --light: #f6f8fb;
+      --text: #172033;
+      --muted: #687386;
+      --border: #e7ebf1;
+      --shadow: 0 20px 50px rgba(7, 26, 53, 0.10);
+      --radius: 18px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1150px, 92%);
+      margin: auto;
+    }
+
+    /* ================= NAVBAR ================= */
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: 0.3s ease;
+      padding: 18px 0;
+    }
+
+    .navbar.scrolled {
+      background: rgba(7, 26, 53, 0.97);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+      padding: 12px 0;
+    }
+
+    .nav-container {
+      width: min(1200px, 92%);
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      color: white;
+    }
+
+    .logo-mark {
+      width: 44px;
+      height: 44px;
+      border: 2px solid var(--gold);
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      color: var(--gold);
+      font-weight: 800;
+      font-family: "Playfair Display", serif;
+      font-size: 20px;
+    }
+
+    .logo-text {
+      line-height: 1.1;
+    }
+
+    .logo-text strong {
+      display: block;
+      font-family: "Playfair Display", serif;
+      font-size: 18px;
+    }
+
+    .logo-text span {
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: #cbd3df;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      color: white;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .nav-links a {
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-light);
+    }
+
+    .nav-apply {
+      background: var(--gold);
+      color: var(--navy) !important;
+      padding: 11px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+    }
+
+    .nav-apply:hover {
+      background: var(--gold-light);
+    }
+
+    .menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(4, 18, 39, 0.97) 0%,
+          rgba(4, 18, 39, 0.88) 48%,
+          rgba(4, 18, 39, 0.55) 100%
+        ),
+        url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+      color: white;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      background: white;
+      clip-path: polygon(0 100%, 100% 40%, 100% 100%);
+    }
+
+    .hero-content {
+      max-width: 720px;
+      padding-top: 80px;
+    }
+
+    .eyebrow {
+      color: var(--gold-light);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(48px, 7vw, 82px);
+      line-height: 1.02;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 span {
+      color: var(--gold-light);
+    }
+
+    .hero p {
+      max-width: 620px;
+      font-size: 18px;
+      color: #dce3ed;
+      margin-bottom: 35px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 24px;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: 0.3s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border-color: rgba(255,255,255,0.4);
+      color: white;
+    }
+
+    .btn-outline:hover {
+      border-color: white;
+      background: rgba(255,255,255,0.08);
+    }
+
+    /* ================= SECTIONS ================= */
+
+    section {
+      padding: 95px 0;
+    }
+
+    .section-label {
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(34px, 5vw, 52px);
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    .section-description {
+      color: var(--muted);
+      max-width: 650px;
+    }
+
+    /* ================= STATS ================= */
+
+    .stats {
+      background: var(--light);
+      padding: 45px 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+    }
+
+    .stat {
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+
+    .stat:last-child {
+      border-right: none;
+    }
+
+    .stat h3 {
+      font-size: 35px;
+      color: var(--navy);
+    }
+
+    .stat h3 span {
+      color: var(--gold);
+    }
+
+    .stat p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* ================= ABOUT ================= */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-image {
+      position: relative;
+    }
+
+    .about-image img {
+      height: 520px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .experience {
+      position: absolute;
+      bottom: 25px;
+      right: -25px;
+      background: var(--navy);
+      color: white;
+      padding: 24px;
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .experience strong {
+      font-family: "Playfair Display", serif;
+      font-size: 36px;
+      color: var(--gold-light);
+      display: block;
+    }
+
+    .experience small {
+      color: #d4dbe5;
+    }
+
+    .about-content p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .check-list {
+      list-style: none;
+      margin-top: 25px;
+    }
+
+    .check-list li {
+      margin-bottom: 13px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .check {
+      min-width: 23px;
+      height: 23px;
+      border-radius: 50%;
+      background: #f4e7c7;
+      color: var(--gold);
+      display: grid;
+      place-items: center;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    /* ================= PROGRAMS ================= */
+
+    .programs {
+      background: var(--light);
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      align-items: end;
+      margin-bottom: 45px;
+    }
+
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .program-card {
+      background: white;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: 0.35s ease;
+    }
+
+    .program-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow);
+    }
+
+    .program-image {
+      height: 220px;
+      overflow: hidden;
+    }
+
+    .program-image img {
+      height: 100%;
+      object-fit: cover;
+      transition: 0.5s;
+    }
+
+    .program-card:hover .program-image img {
+      transform: scale(1.06);
+    }
+
+    .program-content {
+      padding: 25px;
+    }
+
+    .program-content h3 {
+      color: var(--navy);
+      font-family: "Playfair Display", serif;
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    .program-content p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .program-link {
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    /* ================= WHY US ================= */
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .feature {
+      display: flex;
+      gap: 18px;
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      transition: 0.3s;
+    }
+
+    .feature:hover {
+      box-shadow: var(--shadow);
+      transform: translateX(5px);
+    }
+
+    .feature-icon {
+      width: 50px;
+      min-width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      background: #f7ecd4;
+      color: var(--gold);
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+    }
+
+    .feature h3 {
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .feature p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .why-image img {
+      height: 600px;
+      object-fit: cover;
+      border-radius: var(--radius);
+    }
+
+    /* ================= ADMISSION ================= */
+
+    .admission {
+      background:
+        linear-gradient(rgba(7,26,53,0.94),rgba(7,26,53,0.94)),
+        url("https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1600&q=85")
+        center/cover;
+      color: white;
+      text-align: center;
+    }
+
+    .admission .section-title {
+      color: white;
+    }
+
+    .admission .section-description {
+      color: #ccd5e1;
+      margin: auto;
+    }
+
+    .admission .btn {
+      margin-top: 28px;
+    }
+
+    /* ================= TESTIMONIALS ================= */
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin-top: 45px;
+    }
+
+    .testimonial {
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      position: relative;
+    }
+
+    .quote {
+      font-size: 45px;
+      color: var(--gold);
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+
+    .testimonial p {
+      color: var(--muted);
+      margin: 12px 0 22px;
+      font-size: 15px;
+    }
+
+    .person {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .person-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--gold);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+    }
+
+    .person strong {
+      display: block;
+      color: var(--navy);
+    }
+
+    .person span {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* ================= CONTACT ================= */
+
+    .contact {
+      background: var(--light);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .contact-details {
+      margin-top: 30px;
+      display: grid;
+      gap: 20px;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 15px;
+    }
+
+    .contact-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--navy);
+      color: var(--gold-light);
+      display: grid;
+      place-items: center;
+    }
+
+    .contact-item h4 {
+      color: var(--navy);
+    }
+
+    .contact-item p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .contact-form {
+      background: white;
+      padding: 35px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .form-group {
+      margin-bottom: 17px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--navy);
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 13px 15px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      outline: none;
+      background: white;
+      transition: 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(212,166,74,0.12);
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-btn {
+      width: 100%;
+      border: none;
+      cursor: pointer;
+      margin-top: 5px;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      background: #041326;
+      color: white;
+      padding: 65px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 45px;
+    }
+
+    footer h3 {
+      margin-bottom: 18px;
+      font-family: "Playfair Display", serif;
+    }
+
+    footer p,
+    footer a {
+      color: #aeb8c7;
+      font-size: 14px;
+    }
+
+    footer a {
+      display: block;
+      margin-bottom: 9px;
+    }
+
+    footer a:hover {
+      color: var(--gold-light);
+    }
+
+    .footer-logo {
+      margin-bottom: 18px;
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 22px;
+      color: #7e8a9d;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    /* ================= WHATSAPP ================= */
+
+    .whatsapp {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25D366;
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+      z-index: 900;
+      transition: 0.3s;
+    }
+
+    .whatsapp:hover {
+      transform: scale(1.08);
+    }
+
+    /* ================= ANIMATION ================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: 0.8s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media (max-width: 900px) {
+
+      .nav-links {
+        position: absolute;
+        top: 75px;
+        left: 4%;
+        right: 4%;
+        background: var(--navy);
+        border-radius: 12px;
+        padding: 25px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 18px;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stat:nth-child(2) {
+        border-right: none;
+      }
+
+      .about-grid,
+      .why-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .program-grid,
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .about-image img {
+        height: 420px;
+      }
+
+      .why-image img {
+        height: 450px;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      section {
+        padding: 70px 0;
+      }
+
+      .hero {
+        min-height: 90vh;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .stat {
+        border-right: none;
+      }
+
+      .section-heading {
+        display: block;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-form {
+        padding: 24px;
+      }
+
+      .experience {
+        right: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+
+<header class="navbar" id="navbar">
+
+  <div class="nav-container">
+
+    <a href="#home" class="logo">
+
+      <div class="logo-mark">PI</div>
+
+      <div class="logo-text">
+        <strong>Prodigy Institute</strong>
+        <span>Empire</span>
+      </div>
+
+    </a>
+
+    <button class="menu-btn" id="menuBtn">
+      ☰
+    </button>
+
+    <nav class="nav-links" id="navLinks">
+
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#programs">Programs</a>
+      <a href="#why-us">Why Us</a>
+      <a href="#contact">Contact</a>
+
+      <a href="#admission" class="nav-apply">
+        Apply Now
+      </a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+  <div class="container">
+
+    <div class="hero-content reveal">
+
+      <div class="eyebrow">
+        Welcome to Prodigy Institute Empire
+      </div>
+
+      <h1>
+        Building Minds.<br>
+        Shaping <span>Futures.</span>
+      </h1>
+
+      <p>
+        We provide an environment where knowledge meets opportunity,
+        empowering learners with the skills, confidence and character
+        to become exceptional leaders of tomorrow.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="#admission" class="btn btn-primary">
+          Begin Your Journey →
+        </a>
+
+        <a href="#programs" class="btn btn-outline">
+          Explore Programs
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= STATS ================= -->
+
+<section class="stats">
+
+  <div class="container">
+
+    <div class="stats-grid">
+
+      <div class="stat reveal">
+        <h3>10<span>+</span></h3>
+        <p>Years of Excellence</p>
+      </div>
+
+      <div class="stat reveal">
+        <h3>2K<span>+</span></h3>
+        <p>Students Trained</p>
+      </div>
+
+      <div class="stat reveal">
+        <h3>25<span>+</span></h3>
+        <p>Expert Instructors</p>
+      </div>
+
+      <div class="stat reveal">
+        <h3>95<span>%</span></h3>
+        <p>Success Rate</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+  <div class="container">
+
+    <div class="about-grid">
+
+      <div class="about-image reveal">
+
+        <img
+          src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1000&q=85"
+          alt="Students learning"
+        />
+
+        <div class="experience">
+          <strong>10+</strong>
+          <small>Years of Educational Excellence</small>
+        </div>
+
+      </div>
+
+
+      <div class="about-content reveal">
+
+        <div class="section-label">
+          Who We Are
+        </div>
+
+        <h2 class="section-title">
+          Education Beyond the Classroom
+        </h2>
+
+        <p>
+          Prodigy Institute Empire is committed to developing
+          intelligent, creative and confident individuals through
+          quality education and practical learning.
+        </p>
+
+        <p>
+          Our approach combines academic excellence with practical
+          skills, mentorship and personal development.
+        </p>
+
+   
